@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Performance and Transitions - Blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <main>
+      <article class="blog-post">
+        <h1 style="view-transition-name: blog-title">Web Performance and Transitions</h1>
+        <img src="3-800x300.jpg" height="300" width="736" style="view-transition-name: blog-image;" loading="eager"
+          blocking="render">
+        <div class="meta">Published on August 25, 2023 • 6 min read</div>
+        <div class="content">
+          <p>While animations and transitions can greatly enhance user experience, they must be implemented with
+            performance in mind. Let's explore how to create smooth transitions without compromising web performance.
+          </p>
+
+          <h2>Performance Metrics</h2>
+          <p>Understanding key performance metrics is crucial when implementing transitions:</p>
+          <ul>
+            <li>First Contentful Paint (FCP)</li>
+            <li>Largest Contentful Paint (LCP)</li>
+            <li>Cumulative Layout Shift (CLS)</li>
+            <li>First Input Delay (FID)</li>
+          </ul>
+
+          <h2>Optimizing Transitions</h2>
+          <p>Here are some key strategies for maintaining performance while implementing transitions:</p>
+          <ul>
+            <li>Use transform and opacity for animations</li>
+            <li>Implement proper content caching</li>
+            <li>Preload critical resources</li>
+            <li>Minimize main thread work</li>
+          </ul>
+
+          <h2>View Transitions API Benefits</h2>
+          <p>The View Transitions API is designed with performance in mind, utilizing the browser's compositor thread
+            for smooth animations. This means transitions can run at 60fps without blocking the main thread.</p>
+
+          <h2>Measuring Performance</h2>
+          <p>Always measure the impact of transitions on your web application's performance using tools like Lighthouse,
+            Chrome DevTools Performance panel, and Web Vitals.</p>
+        </div>
+      </article>
+    </main>
+  </div>
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "where": {
+          "href_matches": "/*"
+        },
+        "eagerness": "moderate"
+      }
+    ]
+  }
+</script>
+</body>
+
+</html>

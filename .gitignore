@@ -1,0 +1,40 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependency directories
+/node_modules
+/vendor
+
+# Craft CMS storage
+/storage/*
+!/storage/.gitkeep
+
+# Craft CMS public assets
+/web/assets/*
+!/web/assets/.gitkeep
+
+# Build files
+/web/dist
+/web/cpresources
+
+# IDE files
+.idea
+.vscode
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache files
+.cache
+.temp

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - View Transitions Demo</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preload" href="https://picsum.photos/id/1/800/300" as="image" fetchpriority="high">
+
+  <link rel="preload" href="https://picsum.photos/id/2/800/300" as="image" fetchpriority="high">
+
+  <link rel="preload" href="https://picsum.photos/id/3/800/300" as="image" fetchpriority="high">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <main>
+      <h1>About View Transitions</h1>
+      <div class="content">
+        <p>The View Transitions API is a powerful new web platform feature that enables smooth transitions between
+          different states of a webpage.</p>
+        <p>This demo showcases how to implement page transitions using this API, creating a more fluid and engaging user
+          experience that feels more like a native app.</p>
+      </div>
+      <div class="blogs">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <h3><a href="blog-view-transitions.html">Understanding View Transitions API</a></h3>
+            <img src="1-300x100.jpg" height="100" width="300">
+            <p>Learn how the View Transitions API works and how it can enhance your web applications.</p>
+            <a href="blog-view-transitions.html" class="read-more">Read More →</a>
+          </article>
+          <article class="blog-card">
+            <h3><a href="blog-animation-techniques.html">Modern Animation Techniques</a></h3>
+            <img src="2-300x100.jpg" height="100" width="300">
+            <p>Explore different animation techniques for creating smooth and engaging user interfaces.</p>
+            <a href="blog-animation-techniques.html" class="read-more">Read More →</a>
+          </article>
+          <article class="blog-card">
+            <h3><a href="blog-web-performance.html">Web Performance and Transitions</a></h3>
+            <img src="3-300x100.jpg" height="100" width="300">
+            <p>Best practices for implementing transitions while maintaining optimal performance.</p>
+            <a href="blog-web-performance.html" class="read-more">Read More →</a>
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "where": {
+          "href_matches": "/*"
+        },
+        "eagerness": "moderate"
+      }
+    ]
+  }
+</script>
+</body>
+
+</html>

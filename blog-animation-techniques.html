@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Animation Techniques - Blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <main>
+      <article class="blog-post">
+        <h1 style="view-transition-name: blog-title">Modern Animation Techniques</h1>
+        <img src="2-800x300.jpg" height="300" width="736" style="view-transition-name: blog-image;" loading="eager"
+          blocking="render">
+        <div class="meta">Published on August 20, 2023 • 4 min read</div>
+        <div class="content">
+          <p>Modern web animations have come a long way from simple transitions. Today's web applications utilize a
+            variety of techniques to create engaging and meaningful animations that enhance user experience.</p>
+
+          <h2>CSS Animations vs JavaScript Animations</h2>
+          <p>While CSS animations are perfect for simple transitions and keyframe animations, JavaScript provides more
+            control and flexibility for complex animations. Understanding when to use each is crucial for optimal
+            performance.</p>
+
+          <h2>Popular Animation Techniques</h2>
+          <ul>
+            <li>CSS Transitions and Transforms</li>
+            <li>CSS Keyframe Animations</li>
+            <li>GSAP (GreenSock Animation Platform)</li>
+            <li>Framer Motion</li>
+            <li>View Transitions API</li>
+          </ul>
+
+          <h2>Performance Considerations</h2>
+          <p>When implementing animations, it's crucial to consider performance impact. Using properties that trigger
+            only composition (like transform and opacity) instead of layout or paint operations can significantly
+            improve performance.</p>
+
+          <h2>Animation Principles</h2>
+          <p>Following animation principles like timing, easing, and purpose helps create more natural and meaningful
+            animations that enhance rather than distract from the user experience.</p>
+        </div>
+      </article>
+    </main>
+  </div>
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "where": {
+          "href_matches": "/*"
+        },
+        "eagerness": "moderate"
+      }
+    ]
+  }
+</script>
+</body>
+
+</html>

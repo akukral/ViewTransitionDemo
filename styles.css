@@ -1,0 +1,240 @@
+/* CSS Variables */
+:root {
+  --primary-color: #2563eb;
+  --background-color: #f8fafc;
+  --text-color: #1e293b;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Styles */
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Navigation */
+nav {
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  isolation: isolate;
+}
+
+nav:has([aria-current="page"]):after {
+  position: absolute;
+  display: block;
+  width: calc(anchor-size(width));
+  height: calc(anchor-size(height));
+  content: '';
+  border-radius: 10rem;
+  background: #e1e1e1;
+  position-anchor: --nav-shadow;
+  view-transition-name: nav-shadow;
+  position-area: center center;
+}
+
+nav:has([aria-current="page"]):after {
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+nav ul {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  view-transition-name: navigation;
+}
+
+nav a {
+  padding: .5rem 1rem;
+  transition: color 0.2s;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+nav a[aria-current="page"] {
+  anchor-name: --nav-shadow;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Typography */
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+/* Content Sections */
+main {
+  view-transition-name: main;
+}
+
+.content {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Blog Grid */
+.blogs {
+  margin-top: 3rem;
+}
+
+.blogs h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Blog Cards */
+.blog-card {
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.blog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.blog-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  text-wrap: pretty;
+  color: var(--primary-color);
+}
+
+.blog-card h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-card p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.blog-card:hover h3 {
+  view-transition-name: blog-title;
+}
+
+.blog-card:hover img {
+  view-transition-name: blog-image;
+}
+
+/* Blog Post */
+.blog-post h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.blog-post .content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.blog-post .meta {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Links */
+.read-more {
+  display: inline-block;
+  transition: transform 0.2s;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.read-more:hover {
+  transform: translateX(4px);
+}
+
+/* View Transitions */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(nav-shadow) {
+  animation-duration: .5s;
+  animation-timing-function: linear(
+    0, 0.14 4%, 0.94 17%, 1.15 24% 30%, 1.02 43%, 0.98 51%, 1
+  );
+  animation-fill-mode: both;
+}
+
+::view-transition-old(nav-shadow),
+::view-transition-new(nav-shadow) {
+  height: 100%;
+}
+
+::view-transition-group(navigation) {
+  z-index: 1;
+}
+
+::view-transition-old(main) {
+  animation:
+    .2s cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    .5s cubic-bezier(0.4, 0, 0.2, 1) both slide-out;
+}
+
+::view-transition-new(main) {
+  animation:
+    .3s cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+    .5s cubic-bezier(0.4, 0, 0.2, 1) both slide-in;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes slide-in {
+  from { transform: translateY(-2rem); }
+}
+
+@keyframes slide-out {
+  to { transform: translateY(5rem); }
+}
