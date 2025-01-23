@@ -110,6 +110,13 @@
     anchor-name: --nav-shadow;
   }
 
+  @supports not (anchor-name: --nav-shadow){
+    nav a[aria-current="page"] {
+      border-radius: 10rem;
+      background: #e1e1e1;
+    }
+  }
+
   nav a:hover {
     color: var(--primary-color);
   }
@@ -256,3 +263,4 @@
     to { transform: translateY(5rem); }
   }
 }
+`
